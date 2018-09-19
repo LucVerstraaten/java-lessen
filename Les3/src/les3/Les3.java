@@ -23,7 +23,7 @@ public class Les3 extends Application {
         GridPane root = new GridPane();
         
         Scene scene = new Scene(root, 500, 500);
-            new Vb04021(root);
+            new Oef4_3(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
