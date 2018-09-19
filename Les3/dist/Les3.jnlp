@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Les3.jar" size="5408" download="eager" />
+    <jar href="Les3.jar" size="4539" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Les3" >
     <param name="requiredFXVersion" value="8.0+"/>

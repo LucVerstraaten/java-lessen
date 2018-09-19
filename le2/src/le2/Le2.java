@@ -24,7 +24,7 @@ public class Le2 extends Application
       Pane root = new Pane();
       Scene scene = new Scene(root, 300, 450);
       
-      new Flag(root);
+      new huis(root);
       
       primaryStage.setScene(scene);
       primaryStage.setTitle("les2 App");
