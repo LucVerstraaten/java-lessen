@@ -20,6 +20,7 @@ public class KassaGui {
     private Label label1, label2, label3, label4, label5;
     private TextField txtbedrag, txtsub, txtbtw, txttotexbtw, txttot;
     private Button btntot, btnreset;
+    private Kassa kas = new Kassa();
 
     public KassaGui(GridPane p) {
         txtbedrag = new TextField();
@@ -31,37 +32,59 @@ public class KassaGui {
         btntot = new Button("Totaal");
         btnreset = new Button("Reset");
 
+        label1 = new Label("Voer bedrag in");
+        label2 = new Label("Subtotaal");
+        label3 = new Label("btw");
+        label4 = new Label("totaal ex Btw");
+        label5 = new Label("totaal");
+
         txtbedrag.setAlignment(Pos.CENTER_RIGHT);
         txtsub.setAlignment(Pos.CENTER_RIGHT);
         txtbtw.setAlignment(Pos.CENTER_RIGHT);
         txttotexbtw.setAlignment(Pos.CENTER_RIGHT);
         txttot.setAlignment(Pos.CENTER_RIGHT);
 
-        btnover.setOnAction(event -> {
-            if (invoervak.getText() != null && !invoervak.getText().trim().isEmpty()) {
+        btntot.setOnAction(event -> {
+            if (txtbedrag.getText() != null && !txtbedrag.getText().trim().isEmpty()) {
                 try {
-                    String invoer = invoervak.getText();
+                    String invoer = txtbedrag.getText();
                     double invoerGetal = Double.parseDouble(invoer);
 
-                    double uitvoergetal = 12 * invoerGetal;
-                    uitvoervak.setText(String.format("%.2f", uitvoergetal));
+                    txtsub.setText("" + kas.getSubtotaal());
+                    kas.telOp(invoerGetal);
+                    txtbtw.setText("" + kas.berekenBTW());
+                    txttotexbtw.setText("" + kas.berekenSubtotaalExBTW());
+                    txttot.setText("" + kas.getSubtotaal());
+
                 } catch (Exception e) {
-                    uitvoervak.setText("VUL EEN NUMMER IN");
+                    txtbedrag.setText("VUL EEN NUMMER IN");
                 }
             } else {
-                uitvoervak.setText("VUL IETS IN");
+                txtbedrag.setText("VUL IETS IN");
             }
         });
 
-        btnwis.setOnAction(event -> {
-            invoervak.clear();
-            uitvoervak.clear();
+        btnreset.setOnAction(event -> {
+            txtbedrag.clear();
+            txtsub.clear();
+            txtbtw.clear();
+            txttotexbtw.clear();
+            txttot.clear();
+
         });
 
-        p.add(invoervak, 0, 0);
-        p.add(btnover, 1, 0);
-        p.add(uitvoervak, 0, 1);
-        p.add(btnwis, 1, 1);
+        p.add(label1, 0, 0);
+        p.add(txtbedrag, 1, 0);
+        p.add(label2, 0, 1);
+        p.add(txtsub, 1, 1);
+        p.add(btntot, 2, 1);
+        p.add(label3, 0, 2);
+        p.add(txtbtw, 1, 2);
+        p.add(label4, 0, 3);
+        p.add(txttotexbtw, 1, 3);
+        p.add(label5, 0, 4);
+        p.add(txttot, 1, 4);
+        p.add(btnreset, 2, 4);
     }
 
 }

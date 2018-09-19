@@ -7,8 +7,7 @@ package kassa;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
@@ -17,19 +16,12 @@ import javafx.stage.Stage;
  */
 public class KassaSys extends Application {
 
-    private TextField invoer1, invoer2;
-    private Button btn1;
-
     @Override
     public void start(Stage primaryStage) {
 
-        FlowPane root = new FlowPane();
-        invoer1 = new TextField();
-        invoer2 = new TextField();
-        Scene scene = new Scene(root, 300, 250);
-
-        root.getChildren().addAll(invoer1, invoer2, btn1);
-
+        GridPane root = new GridPane();
+        Scene scene = new Scene(root, 500, 500);
+        new KassaGui(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
