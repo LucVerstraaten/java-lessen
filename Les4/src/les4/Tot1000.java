@@ -24,9 +24,9 @@ public class Tot1000 {
         i = 0;
 
         for (int x = 1; x < 1001; x++) {
-            //if (x % 2 == 0) {
+
                 i += x;
-           // }
+
         }
         lbUitkomst.setText("" + i);
         p.add(lbUitkomst, 0, 0);

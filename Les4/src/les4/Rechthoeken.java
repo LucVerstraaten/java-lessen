@@ -16,18 +16,17 @@ import javafx.scene.shape.Rectangle;
  * @author Luc Verstraaten
  */
 public class Rechthoeken {
-    
-            private Canvas canvas;
-            private GraphicsContext gc;
-    public Rechthoeken(Pane p)
-    {
-        canvas = new Canvas(250,250);
+
+    private Canvas canvas;
+    private GraphicsContext gc;
+
+    public Rechthoeken(Pane p) {
+        canvas = new Canvas(250, 250);
         gc = canvas.getGraphicsContext2D();
         p.getChildren().addAll(canvas);
-        for(int x =1; x < 11; x++)
-        {
-            gc.strokeRect(20, 20, 20+2*x, 20+2*x);
+        for (int x = 1; x < 11; x++) {
+            gc.strokeRect(20, 20, 20 + 2 * x, 20 + 2 * x);
         }
-        
+
     }
 }

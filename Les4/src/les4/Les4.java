@@ -6,13 +6,9 @@
 package les4;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -23,9 +19,9 @@ public class Les4 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        GridPane root = new GridPane();
+        VBox root = new VBox();
         Scene scene = new Scene(root, 500, 500);
-        new Tot1000(root);
+        new Rechthoeken2(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
