@@ -24,7 +24,7 @@ public class Les4 extends Application {
     public void start(Stage primaryStage) {
         GridPane root = new GridPane();
         Scene scene = new Scene(root, 500, 500);
-        new Vergelijker(root);
+        new Sorteerder(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
